@@ -29,7 +29,8 @@ module top(mclk, rst_n, seg, btn);
 	wire [25:0] sel1_out, sel2_out;
 
 	//register
-	wire [25:0] reg_data0, reg_data1, reg_ord, reg_cnt;
+	wire [25:0] reg_data0, reg_data1, reg_cnt;
+	wire [43:0] reg_ord;
 	wire reg_comp;
 
 	//memory

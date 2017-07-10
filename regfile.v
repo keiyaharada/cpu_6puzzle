@@ -5,7 +5,7 @@ module regfile(src0, src1, dst, we, data, clk, rst_n, data0, data1, cnt, ord, co
 	input we;
 	input [25:0] data;
 	output [25:0] cnt;
-	output [25:0] ord;
+	output [43:0] ord;
 	output comp;
 	output [25:0] data0, data1;
 
@@ -108,7 +108,7 @@ module regfile(src0, src1, dst, we, data, clk, rst_n, data0, data1, cnt, ord, co
 	assign DEPTHS = regis[2];
 	assign BEGINNINGS = regis[0];
 	assign BEGINNING_TEMP = regis[29];
-	assign cnt = {40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000,regis[2][35:32]};
-	assign ord = {regis[21][1:0], regis[20][1:0], regis[19][1:0], regis[18][1:0], regis[17][1:0], regis[16][1:0], regis[15][1:0], regis[14][1:0], regis[13][1:0], regis[12][1:0], regis[11][1:0], regis[10][1:0], regis[9][1:0], regis[8][1:0], regis[7][1:0], regis[6][1:0]};
+	assign cnt = {40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000,regis[2][3:0]};
+	assign ord = {regis[4][1:0],regis[24][1:0],regis[23][1:0],regis[22][1:0],regis[21][1:0],regis[20][1:0],regis[19][1:0],regis[18][1:0], regis[17][1:0], regis[16][1:0], regis[15][1:0], regis[14][1:0], regis[13][1:0], regis[12][1:0], regis[11][1:0], regis[10][1:0], regis[9][1:0], regis[8][1:0], regis[7][1:0], regis[6][1:0]};
 	assign comp = regis[30][0];
 endmodule

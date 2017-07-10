@@ -1,7 +1,7 @@
 module io(comp, cnt, ord, btn, seg, clk, rst_n);
 	input comp;
 	input [25:0] cnt;
-	input [25:0] ord;
+	input [43:0] ord;
 	input [4:0] btn;
 	output reg [11:0] seg;
 	input clk, rst_n;
@@ -39,6 +39,7 @@ module io(comp, cnt, ord, btn, seg, clk, rst_n);
 		DOWN = 44'b10,
 		LEFT = 44'b11,
 		RIGHT = 44'b00;
+		//ORD = {ord1[17:0],ord[25:0]};
 	always @(posedge clk) begin
 		if(!rst_n) begin
 			num <= 0;
